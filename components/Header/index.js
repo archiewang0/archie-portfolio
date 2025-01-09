@@ -1,6 +1,8 @@
+"use client"
+
 import { Popover } from "@headlessui/react";
 import { useTheme } from "next-themes";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Button from "../Button";
 // Local Data
