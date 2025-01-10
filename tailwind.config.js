@@ -1,18 +1,52 @@
+// /** @type {import('tailwindcss').Config} */
+// module.exports = {
+//   content: [
+//     "./app/**/*.{js,ts,jsx,tsx}",
+//     "./pages/**/*.{js,ts,jsx,tsx}",
+//     "./components/**/*.{js,ts,jsx,tsx}",
+ 
+//     // Or if using `src` directory:
+//     "./src/**/*.{js,ts,jsx,tsx}",
+//   ],
+//   theme: {
+//     extend: {},
+//   },
+//   plugins: [],
+// }
+
+const { colors } = require('tailwindcss/colors')
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
+/** @type {import('tailwindcss').Config} */
 module.exports = {
+  // 增加深色的樣式
+  darkMode: 'class',
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    './app/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+
+    // Or if using `src` directory:
+    './src/**/*.{js,ts,jsx,tsx}',
   ],
-  darkMode: "class",
   theme: {
-    screens: {
-      mob: "375px",
-      tablet: "768px",
-      laptop: "1024px",
-      desktop: "1280px",
-      laptopl: "1440px",
+    container: {
+      center: true,
+      padding: '1.5rem',
+      screens: {
+        '2xl': '1360px',
+      },
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)', ...fontFamily.sans],
+      },
+      colors: {
+        ...colors,
+        'light-gold': '#f5bc51',
+        'dark-gold': '#533519',
+      },
+    },
   },
-  plugins: [],
-};
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
+}
