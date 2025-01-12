@@ -50,3 +50,11 @@ if response.status_code == 200:
     print(data)
 else:
     print(f'Request failed with status code {response.status_code}')`
+
+
+export const HomePageCode = `
+Hello 👋
+I'm Archie Wang 
+Frontend Devloper
+based in Taiwan.
+`

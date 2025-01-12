@@ -9,14 +9,16 @@ import { useTheme , } from 'next-themes'
 import darkTheme from "prism-react-renderer/themes/nightOwl"
 import lightTheme from 'prism-react-renderer/themes/nightOwlLight'
 
+// hieghtlight 用來render 程式語言的時候變色使用的
 import Highlight from 'prism-react-renderer'
+
 
 interface CodeProps {
   code: string
   show: boolean
-  language: Language
-  animationDelay?: number
-  animated?: boolean
+  language: Language    
+  animationDelay?: number   //每字動畫時差
+  animated?: boolean    //打字動畫
 }
 
 const Code: FC<CodeProps> = ({
@@ -47,39 +49,42 @@ const Code: FC<CodeProps> = ({
     },[code, show , animated ,animationDelay ])
 
     const lines = text.split(/\r\n|\r|\n/).length
+    console.log('run time!!!')
     // 每個文字都切開 \r 是enter \n 是換行
 
     const theme = applicationTheme === 'light' ? lightTheme : darkTheme
 
+    // 因為Hightlight 會改變程式語言的顏色, theme 參數會帶入他自己 PrismTheme = lightTheme , darkTheme
     return <Highlight {...defaultProps} code={text} language={language} theme={theme}>
         {({className , tokens , getLineProps , getTokenProps})=>(
-            <pre 
-                className={className + 'transition-all w-fit bg-transparent duration-100 py-0 no-scrollbar'}
-                style={{
-                    maxHeight: show? lines * 24  : 0,
-                    opacity: show? 1 : 0
-                }}>
-                    {tokens.map((line , i) => {
-                        
-                        // 阻止eslint的 IDE 錯誤發生
-                        // eslint-disable-next-line no-unused-vars
-                        const {key , ...rest } = getLineProps({line, key:i})
+            <>
+                <pre 
+                    className={className + 'transition-all w-fit bg-transparent duration-100 py-0 no-scrollbar'}
+                    style={{
+                        maxHeight: show? lines * 24  : 0,
+                        opacity: show? 1 : 0
+                    }}>
+                        {tokens.map((line , i) => {
+                            
+                            // 阻止eslint的 IDE 錯誤發生
+                            // eslint-disable-next-line no-unused-vars
+                            const {key , ...rest } = getLineProps({line, key:i})
 
-                        return (
-                            <div key={`line-${i}`} 
-                                style={{position: 'relative'}}
-                                {...rest}>
-                                {line.map((token,index) => {
-                                    
-                                    // eslint-disable-next-line no-unused-vars
-                                    const {key , ...props } = getTokenProps({token ,i})
-                                    return <span key={index} {...props}></span>
-                                })}
-                            </div>
-                        )
-                    })}
+                            return (
+                                <div key={`line-${i}`} 
+                                    style={{position: 'relative'}}
+                                    {...rest}>
+                                    {line.map((token,index) => {
+                                        
+                                        // eslint-disable-next-line no-unused-vars
+                                        const {key , ...props } = getTokenProps({token ,i})
+                                        return <span key={index} {...props}></span>
+                                    })}
+                                </div>
+                            )
+                        })}
                 </pre>
-
+            </>
         )}
     </Highlight>
 }

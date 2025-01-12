@@ -9,28 +9,13 @@ import { useTheme , } from 'next-themes'
 import SignOutButton from './SignOutButton'
 import ThemeToggle from './ThemeToggle'
 import { createTheme ,ThemeProvider } from '@mui/material'
-import lightTheme from 'prism-react-renderer/themes/nightOwlLight'
-import darkTheme from "prism-react-renderer/themes/nightOwl"
-import Link from 'next/link'
 
-// interface MobileMenuProps {
-//     session: Session | null
-// }
+import Link from 'next/link'
 
 const MobileMenu: FC= () => {
     const [open,setOpen] = useState<boolean>(false)
     const { setTheme } = useTheme()
-
-    // const darkTheme = createTheme({
-    //   palette: {
-    //     mode: applicationTheme === 'light' ? 'light' : 'dark',
-    //   },
-    // })
-
-
-    
     return <div className={`md:hidden flex relative`} >
-
 
         <button 
             className={`${buttonVariants({variant: 'ghost'})}`}
@@ -64,26 +49,10 @@ const MobileMenu: FC= () => {
                     <Link href="/documentation" className={buttonVariants({variant: 'ghost'})}>
                         Documentation
                     </Link>
-
-                    {/* <hr className={`dark:opacity-70 mt-2 ${session? 'mb-2': 'mb-6' } `}/> */}
-
-                    {/* {session? (<>
-
-                        <Link className={buttonVariants({variant: 'ghost' })}
-                        href="/dashboard">
-                            DashBoard
-                        </Link>
-
-                        <hr className='dark:opacity-70 mt-2 mb-6'/>
-                        
-                        <SignOutButton/>
-                    </>): } */}
-
                     <SignInButton/>
                 </div>
             </div>) : null
         }
- 
     </div>
 }
 
