@@ -27,20 +27,20 @@ export default function RootLayout({
 
             <div className='bg-container'>
                 <div className="animate-bg">
-                    <div className='animate-bg inset justify-center'>
+                    <div className='animate-bg inset justify-center flex-wrap'>
                         <div className='bg-shap1 bg-tea opacity-25 bg-blur'></div>
                         <div className='bg-shap2 bg-primary opacity-25 bg-blur'></div>
                         <div className='bg-shap1 bg-purple opacity-25 bg-blur'></div>
+                        <div className='bg-shap3 bg-green opacity-25 bg-blur'></div>
                     </div>
                 </div>
             </div>
 
 
           <Providers>
-            {children}
-
             {/* @ts-expect-error Server Component */}
             <Navbar/>
+            {children}
           </Providers>
           
           {/* 留給mobile 更多的高度 */}

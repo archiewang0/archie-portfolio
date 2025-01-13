@@ -2,11 +2,12 @@
 import { getServerSession } from 'next-auth'
 import Link from 'next/link'
 import { buttonVariants } from './ui/Button'
-import SignInButton from './SignInButton'
-import SignOutButton from './SignOutButton'
+// import SignInButton from './SignInButton'
+// import SignOutButton from './SignOutButton'
 import ThemeToggle from './ThemeToggle'
 // import { authOptions } from '@/lib/auth'
 import MobileMenu from './MobileMenu'
+import { cn } from '@/lib/utils'
 import type{ Session } from 'next-auth'
 
 // interface NavbarProps {
@@ -25,8 +26,8 @@ const Navbar = async ({}) => {
     return <div className='fixed backdrop-blur-sm bg-white/75 dark:bg-slate-900 z-50 top-0 left-0 right-0 h-20 broder-b border-slate-300
      dark:border-slate-700 shadow-sm flex items-center justify-between'>
         <div className=' container max-w-7xl mx-auto w-full flex justify-between items-center '>
-            <Link href="/" className={buttonVariants({variant: 'link'})}>
-                Text Similarity 1.0
+            <Link href="/" className={cn([buttonVariants({variant: 'link'}) , 'text-5xl'])}>
+                ➆
             </Link>
 
 
@@ -49,7 +50,7 @@ const Navbar = async ({}) => {
                     </Link>
                     <SignOutButton/>
                 </>): } */}
-                <SignInButton/>
+                {/* <SignInButton/> */}
             </div>
         </div>
      </div>

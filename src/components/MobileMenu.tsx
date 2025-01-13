@@ -1,12 +1,12 @@
 "use client"
 import { FC } from 'react'
 import { buttonVariants } from './ui/Button'
-import SignInButton from './SignInButton'
+// import SignInButton from './SignInButton'
 import React, {useState} from 'react'
 import type{ Session } from 'next-auth'
 import Icons from './Icons'
 import { useTheme , } from 'next-themes'
-import SignOutButton from './SignOutButton'
+// import SignOutButton from './SignOutButton'
 import ThemeToggle from './ThemeToggle'
 import { createTheme ,ThemeProvider } from '@mui/material'
 
@@ -49,7 +49,7 @@ const MobileMenu: FC= () => {
                     <Link href="/documentation" className={buttonVariants({variant: 'ghost'})}>
                         Documentation
                     </Link>
-                    <SignInButton/>
+                    {/* <SignInButton/> */}
                 </div>
             </div>) : null
         }

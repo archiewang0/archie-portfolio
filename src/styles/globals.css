@@ -90,6 +90,14 @@ body .animate-bg .bg-shap2{
     animation: two 10s infinite;
 }
 
+body .animate-bg .bg-shap3{
+    width: 10vh;
+    height: 30vh;
+    border-radius: 99999px;
+    position: relative;
+    animation: two 15s infinite;
+}
+
 body .animate-bg .bg-blur{
     filter: blur(90px);
 }
@@ -102,6 +110,9 @@ body .animate-bg .bg-primary{
 }
 body .animate-bg .bg-purple{
     background-color: rgb(140, 0, 215);
+}
+body .animate-bg .bg-green{
+    background-color: rgb(72, 255, 102);
 }
 
 @keyframes one {
