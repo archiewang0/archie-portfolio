@@ -9,6 +9,7 @@ import Code from '@/components/Code'
 import { HomePageCode } from '@/helpers/documentation-code'
 import TypingCodeAnimate from '@/components/TypingCodeAnimate'
 import AccordionSection from '@/components/ui/Accordion'
+import { ScrollDown } from '@/components/ui/ScrollDown'
 // import { Inter } from 'next/font/google'
 // const inter = Inter({ subsets: ['vietnamese'] })
 
@@ -20,9 +21,9 @@ export const metadata: Metadata = {
   description: "免費並且開源的同義字API"
 }
 export default function Home() {
-    return <div className=' relative h-screen flex items-center justify-center overflow-x-hidden'>
-        <div className=' container max-w-7xl mx-auto w-full h-full'>
-            <div className=' h-full gap-6 flex flex-col justify-center items-start'>
+    return <div className=' relative pb-60  flex items-center justify-center overflow-x-hidden'>
+        <div className=' container max-w-7xl mx-auto w-full '>
+            <div className=' relative h-screen gap-6 flex flex-col justify-center items-start'>
                 <TypingCodeAnimate classname={`sm:text-7xl sm:leading-relaxed text-3xl`} animated code={HomePageCode} show/>
 
                 <div>
@@ -32,10 +33,15 @@ export default function Home() {
                         <a href='https://www.google.com' target='_bank'>Cake</a>
                     </p>
                 </div>
-                
-                <AccordionSection />
 
+                <ScrollDown classname=' absolute bottom-20 sm:bottom-0 left-1/2 translate-x-1/2'/>
             </div>
+
+            <div>
+                <h3 className='text-3xl' id='work'>Work.</h3>
+                <AccordionSection />
+            </div>
+
         </div>
     </div>
 }
