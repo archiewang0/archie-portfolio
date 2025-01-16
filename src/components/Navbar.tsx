@@ -23,7 +23,7 @@ const Navbar = async ({}) => {
     // console.log('session!!!!!!!!!: ',session)
     
     // dark: 是切換成dark mode 時候呈現出來
-    return <div className='fixed backdrop-blur-sm bg-white/75 dark:bg-slate-900 z-50 top-0 left-0 right-0 h-20 broder-b border-slate-300
+    return <div className='fixed backdrop-blur-sm bg-white/75 dark:bg-black/20 z-50 top-0 left-0 right-0 h-20 broder-b border-slate-300
      dark:border-slate-700 shadow-sm flex items-center justify-between'>
         <div className=' container max-w-7xl mx-auto w-full flex justify-between items-center '>
             <Link href="/" className={cn([buttonVariants({variant: 'link'}) , 'text-5xl'])}>
