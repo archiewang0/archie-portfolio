@@ -21,11 +21,10 @@ export const metadata: Metadata = {
   title: '查詢相似字 API | Home',
   description: "免費並且開源的同義字API"
 }
-export default function Home() {
+export default function About() {
     return <div className=' relative pb-60  flex items-center justify-center overflow-x-hidden'>
         <div className=' container max-w-7xl mx-auto w-full '>
-            <div className=' relative h-screen-1/2 gap-6 flex flex-col justify-start items-start'>
-                <div className=' h-1/4 sm:h-1/5'></div>
+            <div className=' relative h-screen gap-6 flex flex-col justify-center items-start'>
                 <TypingCodeAnimate classname={`sm:text-7xl sm:leading-relaxed text-3xl`} animated code={HomePageCode} show/>
 
                 <div>

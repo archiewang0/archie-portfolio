@@ -46,6 +46,21 @@ module.exports = {
         'light-gold': '#f5bc51',
         'dark-gold': '#533519',
       },
+      keyframes: {
+				slideDown: {
+					from: { height: "0px" },
+					to: { height: "var(--radix-accordion-content-height)" },
+				},
+				slideUp: {
+					from: { height: "var(--radix-accordion-content-height)" },
+					to: { height: "0px" },
+				},
+			},
+			animation: {
+				slideDown: "slideDown 500ms ease-out",
+				slideUp: "slideUp 500ms ease-out",
+			},
+
     },
   },
   plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],

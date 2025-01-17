@@ -39,6 +39,10 @@ const Navbar = async ({}) => {
                     Documentation
                 </Link>
 
+                <Link href="/about" className={buttonVariants({variant: 'ghost'})}>
+                    About
+                </Link>
+
                 {/* 
                     當登入完成 會長出該區塊,
                     第三方登入之後會產生session的資料

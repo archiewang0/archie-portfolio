@@ -49,6 +49,12 @@ const MobileMenu: FC= () => {
                     <Link href="/documentation" className={buttonVariants({variant: 'ghost'})}>
                         Documentation
                     </Link>
+
+                    <Link href="/about" className={buttonVariants({variant: 'ghost'})}>
+                        About
+                    </Link>
+
+                    
                     {/* <SignInButton/> */}
                 </div>
             </div>) : null
