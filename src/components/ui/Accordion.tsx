@@ -16,31 +16,46 @@ export interface AccordionSectionProps{
 
 const AccordionSection:FC<AccordionSectionProps> = () => {
 	const {theme: applicationTheme} = useTheme()
-	console.log('檢查image路徑: ' , projectImg)
+	// console.log('檢查image路徑: ' , projectImg)
 
 	return (
+
+		// <Accordion.Root type="single">
+		// 	<Accordion.Item value="item-1">
+		// 		<Accordion.Header>
+		// 			<Accordion.Trigger className="AccordionTrigger">
+		// 				<span>Trigger text</span>
+						
+		// 			</Accordion.Trigger>
+		// 		</Accordion.Header>
+		// 		<Accordion.Content>…</Accordion.Content>
+		// 	</Accordion.Item>
+		// </Accordion.Root>
+
+
 		<Accordion.Root className="w-full" type="single" collapsible>
 			<Accordion.Item value="item-1">
 				<Accordion.Header>
 					<Accordion.Trigger className="w-full p-4 hover:bg-white/30 dark:hover:bg-black/20">
 						<div className=" w-full flex justify-between">
-								<div className="flex">
-									<span className="dark:text-slate-300">2024 APR - NOW</span>
-									<div className=" ml-10">
-										<div className="dark:text-slate-300 text-left">Jet EVCharging</div>
-										<div className="dark:text-slate-300 opacity-40 text-left">Jet Energy</div>
-									</div>
+							<div className="flex">
+								<span className="dark:text-slate-300">2024 APR - NOW</span>
+								<div className=" ml-10">
+									<div className="dark:text-slate-300 text-left">Jet EVCharging</div>
+									<div className="dark:text-slate-300 opacity-60 text-left">Jet Energy</div>
 								</div>
-					
-								<div >
-									<a href="https://www.google.com/" target="_blank" className="flex items-center dark:text-slate-300">Visit 
-									<span className="text-5xl ml-2">👉</span>
-									</a>
-								</div>
+							</div>
+				
+							<div >
+								<a href="https://www.google.com/" target="_blank" className="flex items-center dark:text-slate-300">Visit 
+									<Icon icon="charm:arrow-up-right" className="w-12 h-12" />
+								</a>
+							</div>
 						</div>
 
 					</Accordion.Trigger>
-						<hr className=" opacity-40  h-px bg-black"/>
+					<hr className="  border-slate-500 dark:border-stone-400"/>
+
 				</Accordion.Header>
 
 				<Accordion.Content className="p-4 overflow-hidden data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown">
@@ -76,23 +91,25 @@ const AccordionSection:FC<AccordionSectionProps> = () => {
 				<Accordion.Header>
 					<Accordion.Trigger className="w-full p-4 hover:bg-white/30 dark:hover:bg-black/20">
 						<div className=" w-full flex justify-between">
-								<div className="flex">
-									<span className="dark:text-slate-300">2024 APR - NOW</span>
-									<div className=" ml-10">
-										<div className="dark:text-slate-300 text-left">Jet EVCharging</div>
-										<div className="dark:text-slate-300 opacity-40 text-left">Jet Energy</div>
-									</div>
+							<div className="flex">
+								<span className="dark:text-slate-300">2024 APR - NOW</span>
+								<div className=" ml-10">
+									<div className="dark:text-slate-300 text-left">Jet EVCharging</div>
+									<div className="dark:text-slate-300 opacity-40 text-left">Jet Energy</div>
 								</div>
+							</div>
 					
-								<div >
-									<a href="https://www.google.com/" target="_blank" className="flex items-center dark:text-slate-300">Visit 
-									<span className="text-5xl ml-2">👉</span>
-									</a>
-								</div>
+							<div >
+								<a href="https://www.google.com/" target="_blank" className="flex items-center dark:text-slate-300">Visit 
+									<Icon icon="charm:arrow-up-right" className="w-12 h-12" />
+								</a>
+							</div>
 						</div>
 
 					</Accordion.Trigger>
-						<hr className=" opacity-40  h-px bg-black"/>
+					<hr className=" border-slate-500 dark:border-stone-400"/>
+
+
 				</Accordion.Header>
 
 				<Accordion.Content className="p-4 overflow-hidden data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown">
@@ -127,23 +144,24 @@ const AccordionSection:FC<AccordionSectionProps> = () => {
 				<Accordion.Header>
 					<Accordion.Trigger className="w-full p-4 hover:bg-white/30 dark:hover:bg-black/20">
 						<div className=" w-full flex justify-between">
-								<div className="flex">
-									<span className="dark:text-slate-300">2024 APR - NOW</span>
-									<div className=" ml-10">
-										<div className="dark:text-slate-300 text-left">Jet EVCharging</div>
-										<div className="dark:text-slate-300 opacity-40 text-left">Jet Energy</div>
-									</div>
+							<div className="flex">
+								<span className="dark:text-slate-300">2024 APR - NOW</span>
+								<div className=" ml-10">
+									<div className="dark:text-slate-300 text-left">Jet EVCharging</div>
+									<div className="dark:text-slate-300 opacity-40 text-left">Jet Energy</div>
 								</div>
+							</div>
 					
-								<div >
-									<a href="https://www.google.com/" target="_blank" className="flex items-center dark:text-slate-300">Visit 
-									<span className="text-5xl ml-2">👉</span>
-									</a>
-								</div>
+							<div>
+								<a href="https://www.google.com/" target="_blank" className="flex items-center dark:text-slate-300">Visit 
+									<Icon icon="charm:arrow-up-right" className="w-12 h-12" />
+								</a>
+							</div>
 						</div>
 
 					</Accordion.Trigger>
-						<hr className=" opacity-40  h-px bg-black"/>
+					<hr className=" border-slate-500 dark:border-stone-400"/>
+
 				</Accordion.Header>
 
 				<Accordion.Content className="p-4 overflow-hidden data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown">

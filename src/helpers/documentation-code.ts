@@ -1,55 +1,59 @@
-export const nodejs = `const axios = require("axios");
-const options = {
-    method: 'POST',
-    url: 'https://similarityapi.com/api/v1/similarity',
-    params: {
-      text1: 'First text',
-      text2: 'Second text'
-    },
-    headers: {
-      'Authorization': 'YOUR_API_KEY',
-    }
-  };
-  
-axios.request(options).then(function (response) {
-    console.log(response.data);
-}).catch(function (error) {
-    console.error(error);
-});`
+export const archie = `import People from './People'
+import FrontendDeveloper from './FrontendDeveloper'
 
-export const vanillajs = `fetch('https://similarity-web.vercel.app/api/v1/similarity',{
-  method: "POST",
-  headers: {
-      "content-type": "application/json" ,
-      "Authorization": "YOUR_API_KEY",
-  },
-  body: JSON.stringify({
-    text1: "First text" , 
-    text2: "Second text"
-  })
-}).then(d=>d.json())
-.then(d=>console.log(d))
+class Archie extends FrontendDeveloper {
+  private personalInfo: People;
+
+  constructor(name: string, age: number, gender: string, city: string, skills: string[]) {
+    super(skills); 
+    this.personalInfo = new People(name, age, gender, city);
+  }
+
+  introduceAll(): void {
+    this.personalInfo.introduce();
+    this.profession();
+  }
+}
+
+const archie = new Archie('Archie Wang', 28, '男', '台灣', ['HTML', 'CSS', 'JavaScript', 'React']);
+archie.introduceAll();
 `
 
+export const people = `class People {
+  name: string;
+  age: number;
+  gender: string;
 
-export const python = `import requests
-url = 'https://similarityapi.com/api/v1/similarity'
-api_key = 'YOUR_API_KEY'
-text1 = 'First text'
-text2 = 'Second text'
-headers = {
-    'Authorization': api_key
+  constructor(name: string, age: number, gender: string , country: string) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.country = country;
+  }
+
+  introduce(): void {
+    console.log('大家好，我叫'+this.name+'，今年'+this.age+'歲，來自'+this.country+'。');
+  }
 }
-payload = {
-    'text1': text1,
-    'text2': text2
+
+export { People }`
+
+
+export const frontenddeveloper = `class FrontendDeveloper {
+  role: string;
+  skills: string[];
+
+  constructor(skills: string[]) {
+    this.role = '前端工程師';
+    this.skills = skills;
+  }
+
+  profession(): void {
+    console.log('我的職業是'+this.role+'，擅長的技能有：'+this.skills.join('、')+'。');
+  }
 }
-response = requests.post(url, headers=headers, json=payload)
-if response.status_code == 200:
-    data = response.json()
-    print(data)
-else:
-    print(f'Request failed with status code {response.status_code}')`
+
+export { FrontendDeveloper }`
 
 
 export const HomePageCode = `

@@ -46,9 +46,9 @@ const MobileMenu: FC= () => {
 
                     <hr className='dark:opacity-70 mt-2 mb-2'/>
 
-                    <Link href="/documentation" className={buttonVariants({variant: 'ghost'})}>
+                    {/* <Link href="/documentation" className={buttonVariants({variant: 'ghost'})}>
                         Documentation
-                    </Link>
+                    </Link> */}
 
                     <Link href="/about" className={buttonVariants({variant: 'ghost'})}>
                         About

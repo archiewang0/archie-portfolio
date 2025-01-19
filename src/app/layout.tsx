@@ -17,24 +17,31 @@ export default function RootLayout({
   // console.log(theme)
 
   return (
+    // className=' relative pb-60  flex items-center justify-center overflow-x-hidden'
     <html lang="en"
-    suppressHydrationWarning
+      suppressHydrationWarning
       className={cn(['bg-white text-slate-900 antialiased', inter.className]) }>
-      <body className={'min-h-screen bg-slate-50 dark:bg-slate-900 antialiased'}>
+      <body className={'min-h-screen bg-slate-50 dark:bg-slate-900 antialiased pb-32 relative'}>
 
-            <div className='deco-top-bg'></div>
-            <div className='deco-btm-bg'></div>
+
 
             <div className='bg-container'>
                 <div className="animate-bg">
-                    <div className='animate-bg inset justify-center flex-wrap'>
+                    <div className=' overflow-hidden animate-bg inset justify-center flex-wrap'>
                         <div className='bg-shap1 bg-tea opacity-25 bg-blur'></div>
                         <div className='bg-shap2 bg-primary opacity-25 bg-blur'></div>
                         <div className='bg-shap1 bg-purple opacity-25 bg-blur'></div>
+                        <div className='bg-shap3 bg-primary opacity-25 bg-blur'></div>
                         <div className='bg-shap3 bg-green opacity-25 bg-blur'></div>
                     </div>
                 </div>
             </div>
+
+            <div className=' z-50 h-full w-full fixed overflow-hidden pointer-events-none'>
+              <div className='deco-top-bg'></div>
+              <div className='deco-btm-bg'></div>
+            </div>
+
 
 
           <Providers>

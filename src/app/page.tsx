@@ -22,28 +22,32 @@ export const metadata: Metadata = {
   description: "免費並且開源的同義字API"
 }
 export default function Home() {
-    return <div className=' relative pb-60  flex items-center justify-center overflow-x-hidden'>
-        <div className=' container max-w-7xl mx-auto w-full '>
+    return <>
+        
+        <div className=' relative z-10 container max-w-7xl mx-auto w-full '>
+
+            {/* 主視覺 */}
             <div className=' relative h-screen-1/2 gap-6 flex flex-col justify-start items-start'>
                 <div className=' h-1/4 sm:h-1/5'></div>
                 <TypingCodeAnimate classname={`sm:text-7xl sm:leading-relaxed text-3xl`} animated code={HomePageCode} show/>
 
-                <div>
-                    <p className=' flex'>
-                        <span className='dark:text-slate-300 mr-5'>Contact</span>  
-                        <a className='dark:text-slate-300 mr-5' href='https://www.google.com' target='_bank'>LinkedIn</a> 
-                        <a className='dark:text-slate-300' href='https://www.google.com' target='_bank'>Cake</a>
-                    </p>
-                </div>
-
-                <ScrollDown classname=' absolute bottom-20 sm:bottom-0 left-1/2 translate-x-1/2'/>
             </div>
 
-            <div>
+            {/* 作品集 */}
+            <div className=' mt-10'>
                 <h3 className={cn(['text-3xl dark:text-slate-300 mb-8 font-black', inter.className])} id='work'>Work.</h3>
                 <AccordionSection />
             </div>
 
+            {/* 聯絡我們 */}
+            <div  className=' mt-10'>
+                <h3 className={cn(['text-3xl dark:text-slate-300 mb-8 font-black', inter.className])} id='contact'>Contact.</h3>
+
+                <p className='flex'>
+                    <a className='dark:text-slate-300 mr-5' href='https://www.google.com' target='_bank'>LinkedIn</a> 
+                    <a className='dark:text-slate-300' href='https://www.google.com' target='_bank'>Cake</a>
+                </p>
+            </div>
         </div>
-    </div>
+    </>
 }

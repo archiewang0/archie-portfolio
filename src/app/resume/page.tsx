@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description: "免費並且開源的同義字API"
 }
 export default function About() {
-    return <div className=' relative pb-60  flex items-center justify-center overflow-x-hidden'>
+    return <>
         <div className=' container max-w-7xl mx-auto w-full '>
             <div className=' relative h-screen gap-6 flex flex-col justify-center items-start'>
                 <TypingCodeAnimate classname={`sm:text-7xl sm:leading-relaxed text-3xl`} animated code={HomePageCode} show/>
@@ -44,5 +44,5 @@ export default function About() {
             </div>
 
         </div>
-    </div>
+    </>
 }

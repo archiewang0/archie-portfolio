@@ -49,7 +49,6 @@ const Code: FC<CodeProps> = ({
     },[code, show , animated ,animationDelay ])
 
     const lines = text.split(/\r\n|\r|\n/).length
-    console.log('run time!!!')
     // 每個文字都切開 \r 是enter \n 是換行
 
     const theme = applicationTheme === 'light' ? lightTheme : darkTheme
