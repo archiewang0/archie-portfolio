@@ -56,6 +56,17 @@ module.exports = {
 					to: { height: "0px" },
 				},
 			},
+      spacing:{
+        "1/2vh": '50vh',
+        "1/3vh": '33.3vh',
+        "2/3vh": '66.6vh',
+        "1/4vh": '25vh',
+        "3/4vh": '75vh',
+        "1/5vh": '20vh',
+        "2/5vh": '40vh',
+        "3/5vh": '60vh',
+        "4/5vh": '80vh',
+      },
 			animation: {
 				slideDown: "slideDown 500ms ease-out",
 				slideUp: "slideUp 500ms ease-out",

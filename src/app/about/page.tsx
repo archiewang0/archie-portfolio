@@ -1,3 +1,4 @@
+"use client"
 // import { FC } from 'react'
 import type { Metadata } from 'next'
 import LargeHeading from '@/components/ui/LargeHeading'
@@ -6,12 +7,8 @@ import DocumentationTabs from '@/components/DocumentationTabs'
 import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
 const inter = Inter({ subsets: ['vietnamese'] })
+import ExperienceAccordion from './Accordion'
 
-// 寫入seo 
-export const metadata: Metadata = {
-    title: '相似詞 API | Documentation',
-    description: '免費 & 開源 相似詞API'
-}
 
 const page = () => {
   return <div className=' container max-w-7xl mx-auto mt-12'>
@@ -33,6 +30,8 @@ const page = () => {
           <h3 className={cn(['text-2xl text-stone-800 dark:text-slate-300 mb-6 font-black', inter.className])} id='work'>Experience.</h3>
           
 
+          <ExperienceAccordion/>
+            {/* 
             <div className='mt-10'>
               <p className='opacity-80 text-xs'>2023 JUL - NOW</p>
               <p className={cn([' text-xl font-semibold' , inter.className])}>JET OPTOELECTRONICS</p>
@@ -91,7 +90,7 @@ const page = () => {
                 - 建置AWS建置EC2,撰寫Gitlab-CICD讓微服務以及前端webapp能夠成功部屬<br/>
                 - 撰寫nginx設定檔案可以讓前端webapp可以被訪問<br/>
               </p>
-            </div>
+            </div> */}
 
         </div>
       </div>

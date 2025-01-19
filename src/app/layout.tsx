@@ -42,8 +42,6 @@ export default function RootLayout({
               <div className='deco-btm-bg'></div>
             </div>
 
-
-
           <Providers>
             {/* @ts-expect-error Server Component */}
             <Navbar/>

@@ -1,5 +1,4 @@
 "use client"
-// 使用到useState 會需要使用 'use client' 來判斷是client side
 
 
 import { FC, useEffect, useState } from 'react'
@@ -19,6 +18,7 @@ interface CodeProps {
     classname?: string
     animationDelay?: number   //每字動畫時差
     animated?: boolean    //打字動畫
+    animationFinsihEvent?: ()=>void
 }
 
 const TypingCodeAnimate: FC<CodeProps> = ({
@@ -26,7 +26,8 @@ const TypingCodeAnimate: FC<CodeProps> = ({
     show,
     classname,
     animated,
-    animationDelay
+    animationDelay,
+    animationFinsihEvent
 }) => {
     const [text, setText] = useState(animated? '' : code)
     
@@ -39,15 +40,15 @@ const TypingCodeAnimate: FC<CodeProps> = ({
                     i++
                     if(i> code.length){
                         clearInterval(interValid)
+                        animationFinsihEvent && animationFinsihEvent()
                     }
                 }, 15)
 
                 return ()=>clearInterval(interValid)
             }, animationDelay || 150)
         }
-    },[code, show , animated ,animationDelay ])
+    },[code, show , animated ,animationDelay , animationFinsihEvent])
 
-    // 因為Hightlight 會改變程式語言的顏色, theme 參數會帶入他自己 PrismTheme = lightTheme , darkTheme
     return <pre  className={'dark:text-slate-50 ' +classname}>{text}</pre>
 }
 

@@ -8,13 +8,11 @@ import Image from "next/image";
 import projectImg from "public/img/xin-flight-1.avif"
 import * as ScrollArea from "@radix-ui/react-scroll-area";
 
-// import { ChevronDownIcon } from "@radix-ui/react-icons";
-// import "./styles.css";
-export interface AccordionSectionProps{
+export interface ExperienceAccordionAccordionProps{
 }
 
 
-const AccordionSection:FC<AccordionSectionProps> = () => {
+const ExperienceAccordion:FC<ExperienceAccordionAccordionProps> = () => {
 	const {theme: applicationTheme} = useTheme()
 	return (
 
@@ -179,4 +177,4 @@ const AccordionSection:FC<AccordionSectionProps> = () => {
 	)
 };
 
-export default AccordionSection
+export default ExperienceAccordion
