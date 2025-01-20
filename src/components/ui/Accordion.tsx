@@ -59,13 +59,25 @@ const AccordionSection:FC<AccordionSectionProps> = () => {
 						<Icon icon="skill-icons:typescript" width="50" height="50" className="sm:m-2 m-4"/>
 					</div>
 
-					<div className="sm:flex sm:overflow-auto mt-3">
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
+
+					<div className=" sm:flex  sm:overflow-x-auto mt-3">
+
+						<a href={projectImg.src} target="_blank" className=" block w-full accordionItem sm:mr-2 my-2 bg-red-600">
+							<Image className="w-full" src={projectImg} alt="img" />
+						</a>
+
+						<a href={projectImg.src} target="_blank" className=" block w-full accordionItem sm:mr-2 my-2 bg-red-600">
+							<Image className="w-full" src={projectImg} alt="img" />
+						</a>
+
+						<a href={projectImg.src} target="_blank" className=" block w-full accordionItem sm:mr-2 my-2 bg-red-600">
+							<Image className="w-full" src={projectImg} alt="img" />
+						</a>
+
+						<a href={projectImg.src} target="_blank" className=" block w-full accordionItem sm:mr-2 my-2 bg-red-600">
+							<Image className="w-full" src={projectImg} alt="img" />
+						</a>
+
 					</div>
 				
 				</Accordion.Content>

@@ -132,3 +132,7 @@ body .animate-bg .bg-green{
     75%{left: 50px; top: 100px;}
     100%{left: 0px; top: 0px;}
 }
+
+.accordionItem{
+    flex: 0 0 calc(33.333% - 0.5rem);
+}

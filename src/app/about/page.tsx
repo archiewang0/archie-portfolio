@@ -16,9 +16,9 @@ const page = () => {
       <LargeHeading >Archie Wang</LargeHeading>
     </div>
 
-    <div className=' flex w-full mt-20 gap-6'>
+    <div className=' flex sm:flex-nowrap flex-wrap w-full mt-20 gap-6'>
 
-      <div className=' w-1/2 pt-2'>
+      <div className=' w-full sm:w-1/2 pt-2'>
         <div>
           <h3 className={cn(['text-2xl text-stone-800 dark:text-slate-300 mb-6 font-black', inter.className])} id='work'>About Me.</h3>
           <Paragraph>
@@ -28,9 +28,9 @@ const page = () => {
           <hr className=" opacity-40  h-px bg-black mt-10 mb-10 "/>
 
           <h3 className={cn(['text-2xl text-stone-800 dark:text-slate-300 mb-6 font-black', inter.className])} id='work'>Experience.</h3>
-          
 
           <ExperienceAccordion/>
+
             {/* 
             <div className='mt-10'>
               <p className='opacity-80 text-xs'>2023 JUL - NOW</p>
@@ -95,7 +95,7 @@ const page = () => {
         </div>
       </div>
 
-      <div className=' w-1/2 flex flex-col items-center '>
+      <div className=' w-full mt-10 sm:mt-0 sm:w-1/2 flex flex-col items-center '>
           <DocumentationTabs></DocumentationTabs>
       </div>
 
