@@ -32,7 +32,9 @@ const ExperienceAccordion:FC<ExperienceAccordionAccordionProps> = () => {
 
 				<Accordion.Content className="py-4 sm:p-4 overflow-hidden data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown">
 				
-					<p className=" dark:text-slate-300 ">{`Led the end-to-end frontend development of the Xin Flight project, from conception to completion. Assisted in implementing Server-Side Rendering ( SSR ) for the company's website, significantly enhancing user experience and SEO performance.`}</p>
+					<p className=" dark:text-slate-300 ">
+                        {`Led the end-to-end frontend development of the Xin Flight project, from conception to completion. Assisted in implementing Server-Side Rendering ( SSR ) for the company's website, significantly enhancing user experience and SEO performance.`}
+                    </p>
 					
 					<div className="flex flex-wrap m-3">
 						<Icon icon={`skill-icons:angular-${applicationTheme}`} width="50" height="50" className="sm:m-2 m-4" />
@@ -44,13 +46,6 @@ const ExperienceAccordion:FC<ExperienceAccordionAccordionProps> = () => {
 						<Icon icon={`skill-icons:gitlab-${applicationTheme}`} width="50" height="50" className="sm:m-2 m-4" />
 						<Icon icon="skill-icons:sass" width="50" height="50" className="sm:m-2 m-4"/>
 						<Icon icon="skill-icons:typescript" width="50" height="50" className="sm:m-2 m-4"/>
-					</div>
-
-					<div className="sm:flex sm:overflow-auto mt-3">
-						<Image className="w-full sm:w-[calc(50%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(50%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(50%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(50%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
 					</div>
 				
 				</Accordion.Content>
@@ -84,15 +79,6 @@ const ExperienceAccordion:FC<ExperienceAccordionAccordionProps> = () => {
 						<Icon icon="skill-icons:typescript" width="50" height="50" className="sm:m-2 m-4"/>
 					</div>
 
-					<div className="sm:flex sm:overflow-auto mt-3">
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-					</div>
-				
 				</Accordion.Content>
 			</Accordion.Item>
 
@@ -121,15 +107,6 @@ const ExperienceAccordion:FC<ExperienceAccordionAccordionProps> = () => {
 						<Icon icon={`skill-icons:gitlab-${applicationTheme}`} width="50" height="50" className="sm:m-2 m-4" />
 						<Icon icon="skill-icons:sass" width="50" height="50" className="sm:m-2 m-4"/>
 						<Icon icon="skill-icons:typescript" width="50" height="50" className="sm:m-2 m-4"/>
-					</div>
-
-					<div className="sm:flex sm:overflow-auto mt-3">
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
 					</div>
 				
 				</Accordion.Content>
@@ -160,15 +137,6 @@ const ExperienceAccordion:FC<ExperienceAccordionAccordionProps> = () => {
 						<Icon icon={`skill-icons:gitlab-${applicationTheme}`} width="50" height="50" className="sm:m-2 m-4" />
 						<Icon icon="skill-icons:sass" width="50" height="50" className="sm:m-2 m-4"/>
 						<Icon icon="skill-icons:typescript" width="50" height="50" className="sm:m-2 m-4"/>
-					</div>
-
-					<div className="sm:flex sm:overflow-auto mt-3">
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
-						<Image className="w-full sm:w-[calc(33%-0.2rem)] sm:mr-2 my-2" src={projectImg} alt="img" />
 					</div>
 				
 				</Accordion.Content>
