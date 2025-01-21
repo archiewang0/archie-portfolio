@@ -2,14 +2,7 @@
 
 
 import { FC, useEffect, useState } from 'react'
-import {defaultProps, type Language} from "prism-react-renderer"
-// 跑出打code的動畫
-import { useTheme , } from 'next-themes'
-// import darkTheme from "prism-react-renderer/themes/nightOwl"
-// import lightTheme from 'prism-react-renderer/themes/nightOwlLight'
 
-// hieghtlight 用來render 程式語言的時候變色使用的
-import Highlight from 'prism-react-renderer'
 
 
 interface CodeProps {
