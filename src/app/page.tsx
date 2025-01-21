@@ -10,7 +10,7 @@ import { HomePageCode } from '@/helpers/documentation-code'
 import TypingCodeAnimate from '@/components/TypingCodeAnimate'
 import AccordionSection from '@/components/ui/Accordion'
 import { ScrollDown } from '@/components/ui/ScrollDown'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import { useCallback } from 'react'
@@ -24,9 +24,24 @@ const inter = Inter({ subsets: ['vietnamese'] })
 export default function Home() {
     const {theme: applicationTheme} = useTheme()
     const [show, setShow] = useState(false)
+    const [isMobile,setIsMobile ]  = useState(true)
+
     const animationFinsihHanlder = useCallback(()=>{
         setShow(true)
     } ,[])
+
+    useEffect(()=>{
+        setIsMobile(window.screen.width < 640);
+
+        const resizeHandler = ()=>{
+            if (window.screen.width < 640) setIsMobile(true)
+            if (window.screen.width >= 640 ) setIsMobile(false)
+        }
+        window.addEventListener('resize',resizeHandler)
+
+        return window.removeEventListener('resize',resizeHandler)
+    },[])
+
     const datas = projects(applicationTheme === 'system' ? 'light' : applicationTheme)
 
     return <>
@@ -37,7 +52,8 @@ export default function Home() {
             <div className='pt-24 sm:pt-0 relative gap-6 flex flex-col justify-start items-start'>
                 <div className=' h-1/4 sm:h-1/5'></div>
                 <TypingCodeAnimate classname={`sm:text-7xl sm:leading-relaxed text-3xl`} 
-                    animated code={HomePageCode} 
+                    animated={isMobile? false : true} 
+                    code={HomePageCode} 
                     show animationFinsihEvent={animationFinsihHanlder}/>
             </div>
 

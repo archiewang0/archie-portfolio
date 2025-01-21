@@ -28,6 +28,7 @@ const Code: FC<CodeProps> = ({
     animated,
     animationDelay
 }) => {
+    console.log('run code!!!')
     const {theme: applicationTheme} = useTheme()
     const [text, setText] = useState(animated? '' : code)
     

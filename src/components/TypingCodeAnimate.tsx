@@ -25,6 +25,8 @@ const TypingCodeAnimate: FC<CodeProps> = ({
     const [text, setText] = useState(animated? '' : code)
     
     useEffect(()=>{
+        if (!animated) animationFinsihEvent && animationFinsihEvent()
+
         if(show && animated) {
             let i = 0
             setTimeout(()=>{
