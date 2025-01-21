@@ -52,7 +52,7 @@ export default function Home() {
             <div className='pt-24 sm:pt-0 relative gap-6 flex flex-col justify-start items-start'>
                 <div className=' h-1/4 sm:h-1/5'></div>
                 <TypingCodeAnimate classname={`sm:text-7xl sm:leading-relaxed text-3xl`} 
-                    animated={isMobile? false : true} 
+                    animated={true} 
                     code={HomePageCode} 
                     show animationFinsihEvent={animationFinsihHanlder}/>
             </div>

@@ -31,17 +31,17 @@ const DocumentationTabs: FC<DocumentationTabsProps> = ({}) => {
         </TabsList>
         <TabsContent value='archie'>
         <SimpleBar>
-            <Code animated={isMobile? false : true} language='javascript' code={archie} show/>
+            <Code animated={ true} language='javascript' code={archie} show/>
         </SimpleBar>
         </TabsContent>
         <TabsContent value='frontend'>
         <SimpleBar>
-            <Code animated={isMobile? false : true} language='javascript' code={frontenddeveloper} show/>
+            <Code animated={ true} language='javascript' code={frontenddeveloper} show/>
         </SimpleBar>
         </TabsContent>
         <TabsContent value='people'>
         <SimpleBar>
-            <Code animated={isMobile? false : true} language='javascript' code={people} show/>
+            <Code animated={true} language='javascript' code={people} show/>
         </SimpleBar>
         </TabsContent>
     </Tabs>
