@@ -2,8 +2,9 @@
 import {  forwardRef, HTMLAttributes } from 'react'
 import {cva, VariantProps} from "class-variance-authority"
 import { cn } from '@/lib/utils'
+import { Inter } from 'next/font/google'
 
-// 第一個參數 會直接變成該 component 的classname 之後的變數可以做細微的調整
+const inter = Inter({ subsets: ['vietnamese'] })
 
 const headingVariants = cva(
   'text-black dark:text-white text-center lg:text-left font-extrabold leading-tight tracking-tighter',
@@ -30,7 +31,7 @@ interface LargeHeadingProps
 const LargeHeading = forwardRef<HTMLHeadingElement,LargeHeadingProps>(
   ({className, size ,children , ...props} , ref)=>{
     return (
-      <h1 ref={ref} {...props} className={cn(headingVariants({size , className}))}>
+      <h1 ref={ref} {...props} className={cn(headingVariants({size , className}) , inter.className)}>
        {children}
       </h1>
     )

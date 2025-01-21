@@ -6,11 +6,17 @@ import Paragraph from '@/components/ui/Paragraph'
 import DocumentationTabs from '@/components/DocumentationTabs'
 import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
-const inter = Inter({ subsets: ['vietnamese'] })
 import ExperienceAccordion from './ExperienceAccordion'
+import { experience } from '@/helpers/experience'
+import { useTheme } from 'next-themes'
 
+const inter = Inter({ subsets: ['vietnamese'] })
 
-const page = () => {
+const About = () => {
+  const {theme: applicationTheme} = useTheme()
+
+  const datas = experience(applicationTheme === 'system' ? 'light' : applicationTheme)
+
   return <div className='  container max-w-7xl mx-auto mt-12'>
     <div className='flex justify-center'>
       <LargeHeading >Archie Wang</LargeHeading>
@@ -29,7 +35,7 @@ const page = () => {
 
           <h3 className={cn(['text-2xl text-stone-800 dark:text-slate-300 mb-6 font-black', inter.className])} id='work'>Experience.</h3>
 
-          <ExperienceAccordion/>
+          <ExperienceAccordion datas={datas.datas}/>
 
         </div>
       </div>
@@ -42,4 +48,4 @@ const page = () => {
   </div>
 }
 
-export default page
+export default About

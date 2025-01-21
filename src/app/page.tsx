@@ -14,14 +14,20 @@ import { useState } from 'react'
 import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import { useCallback } from 'react'
+import { projects } from '@/helpers/projects'
+import { useTheme  } from 'next-themes'
+
+
 const inter = Inter({ subsets: ['vietnamese'] })
 
 
 export default function Home() {
+    const {theme: applicationTheme} = useTheme()
     const [show, setShow] = useState(false)
     const animationFinsihHanlder = useCallback(()=>{
         setShow(true)
     } ,[])
+    const datas = projects(applicationTheme === 'system' ? 'light' : applicationTheme)
 
     return <>
         
@@ -38,7 +44,7 @@ export default function Home() {
             {/* 作品集 */}
             <div className={cn([' relative top-2 mt-10 transition-all' , show ? 'opacity-100 top-0' : 'opacity-0' ])  }>
                 <h3 className={cn(['text-center sm:text-left text-2xl sm:text-3xl dark:text-slate-300 mb-5 sm:mb-8 font-black', inter.className])} id='work'>Work.</h3>
-                <AccordionSection />
+                <AccordionSection datas={datas.datas} />
             </div>
 
             {/* 聯絡我們 */}
@@ -46,8 +52,8 @@ export default function Home() {
                 <h3 className={cn(['text-center sm:text-left text-2xl sm:text-3xl dark:text-slate-300 mb-5 sm:mb-8 font-black', inter.className])} id='contact'>Contact.</h3>
 
                 <p className='flex sm:justify-start justify-center'>
-                    <a className='dark:text-slate-300 mr-5' href='https://www.google.com' target='_bank'>LinkedIn</a> 
-                    <a className='dark:text-slate-300' href='https://www.google.com' target='_bank'>Cake</a>
+                    <a className='dark:text-slate-300 mr-5' href='https://www.linkedin.com/in/archie-wang-6a5836211/' target='_bank'>LinkedIn</a> 
+                    <a className='dark:text-slate-300' href='https://www.cake.me/me/archie-wang-4e8de0' target='_bank'>Cake</a>
                 </p>
             </div>
             
