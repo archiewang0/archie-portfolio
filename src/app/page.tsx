@@ -24,23 +24,10 @@ const inter = Inter({ subsets: ['vietnamese'] })
 export default function Home() {
     const {theme: applicationTheme} = useTheme()
     const [show, setShow] = useState(false)
-    const [isMobile,setIsMobile ]  = useState(true)
 
     const animationFinsihHanlder = useCallback(()=>{
         setShow(true)
     } ,[])
-
-    useEffect(()=>{
-        setIsMobile(window.screen.width < 640);
-
-        const resizeHandler = ()=>{
-            if (window.screen.width < 640) setIsMobile(true)
-            if (window.screen.width >= 640 ) setIsMobile(false)
-        }
-        window.addEventListener('resize',resizeHandler)
-
-        return window.removeEventListener('resize',resizeHandler)
-    },[])
 
     const datas = projects(applicationTheme === 'system' ? 'light' : applicationTheme)
 
@@ -52,7 +39,7 @@ export default function Home() {
             <div className='pt-24 sm:pt-0 relative gap-6 flex flex-col justify-start items-start'>
                 <div className=' h-1/4 sm:h-1/5'></div>
                 <TypingCodeAnimate classname={`sm:text-7xl sm:leading-relaxed text-3xl`} 
-                    animated={true} 
+                    animated
                     code={HomePageCode} 
                     show animationFinsihEvent={animationFinsihHanlder}/>
             </div>
@@ -61,6 +48,7 @@ export default function Home() {
             <div className={cn([' relative top-2 mt-10 transition-all' , show ? 'opacity-100 top-0' : 'opacity-0' ])  }>
                 <h3 className={cn(['text-center sm:text-left text-2xl sm:text-3xl dark:text-slate-300 mb-5 sm:mb-8 font-black', inter.className])} id='project'>Project.</h3>
                 <AccordionSection datas={datas.datas} />
+                {/* <AccordionSection2 datas={datas.datas}/> */}
             </div>
 
             {/* 聯絡我們 */}

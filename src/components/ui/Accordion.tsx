@@ -57,24 +57,25 @@ const AccordionSection:FC<AccordionSectionProps> = ({
 
 				</Accordion.Header>
 
-				<Accordion.Content className="py-4 sm:p-4 overflow-hidden data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown">
+				<Accordion.Content className=" overflow-hidden data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown">
 				
-					<p className=" dark:text-slate-300 ">
-						{describe}
-                    </p>
+                    <div className="py-4 sm:p-4 ">
+                        <p className=" dark:text-slate-300 ">
+                            {describe}
+                        </p>
+                        
+                        <div className="flex flex-wrap m-3">
+                            {skills.map((data, i )=> <Icon key={i} icon={data} width="50" height="50" className="sm:m-2 m-4" /> )}
+                        </div>
+
+                        <div className=" sm:flex  sm:overflow-x-auto mt-3">
+
+                            {images.map(({src , href} , i)=> <a key={i} href={href} target="_blank" className=" bg-slate-800 flex justify-center items-center w-full accordionItem sm:mr-2 my-2 ">
+                                <Image className="w-full" src={src} alt="img" />
+                            </a> )}
+                        </div>
+                    </div>
 					
-					<div className="flex flex-wrap m-3">
-						{skills.map((data, i )=> <Icon key={i} icon={data} width="50" height="50" className="sm:m-2 m-4" /> )}
-					</div>
-
-
-					<div className=" sm:flex  sm:overflow-x-auto mt-3">
-
-						{images.map(({src , href} , i)=> <a key={i} href={href} target="_blank" className=" bg-slate-800 flex justify-center items-center w-full accordionItem sm:mr-2 my-2 ">
-							<Image className="w-full" src={src} alt="img" />
-						</a> )}
-					</div>
-				
 				</Accordion.Content>
 			</Accordion.Item>
 		)}

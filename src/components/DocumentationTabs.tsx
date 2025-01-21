@@ -10,18 +10,6 @@ interface DocumentationTabsProps {
 }
 
 const DocumentationTabs: FC<DocumentationTabsProps> = ({}) => {
-    const [isMobile,setIsMobile ]  = useState(true)
-    useEffect(()=>{
-        setIsMobile(window.screen.width < 640);
-
-        const resizeHandler = ()=>{
-            if (window.screen.width < 640) setIsMobile(true)
-            if (window.screen.width >= 640 ) setIsMobile(false)
-        }
-        window.addEventListener('resize',resizeHandler)
-
-        return window.removeEventListener('resize',resizeHandler)
-    },[])
 
     return <Tabs defaultValue='archie' className='max-w-2xl w-full'>
         <TabsList>
@@ -31,17 +19,17 @@ const DocumentationTabs: FC<DocumentationTabsProps> = ({}) => {
         </TabsList>
         <TabsContent value='archie'>
         <SimpleBar>
-            <Code animated={ true} language='javascript' code={archie} show/>
+            <Code animated language='javascript' code={archie} show/>
         </SimpleBar>
         </TabsContent>
         <TabsContent value='frontend'>
         <SimpleBar>
-            <Code animated={ true} language='javascript' code={frontenddeveloper} show/>
+            <Code animated language='javascript' code={frontenddeveloper} show/>
         </SimpleBar>
         </TabsContent>
         <TabsContent value='people'>
         <SimpleBar>
-            <Code animated={true} language='javascript' code={people} show/>
+            <Code animated language='javascript' code={people} show/>
         </SimpleBar>
         </TabsContent>
     </Tabs>
