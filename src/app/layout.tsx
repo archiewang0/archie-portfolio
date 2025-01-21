@@ -22,10 +22,8 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn(['bg-white text-slate-900 antialiased', inter.className]) }>
       <body className={'min-h-screen bg-slate-50 dark:bg-slate-900 antialiased pb-32 relative'}>
-
-
-
-            <div className='bg-container'>
+        
+            {/* <div className='bg-container'>
                 <div className="animate-bg">
                     <div className=' overflow-hidden animate-bg inset justify-center flex-wrap'>
                         <div className='bg-shap1 bg-tea opacity-25 bg-blur'></div>
@@ -35,7 +33,7 @@ export default function RootLayout({
                         <div className='bg-shap3 bg-green opacity-25 bg-blur'></div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             <div className=' z-50 h-full w-full fixed overflow-hidden pointer-events-none'>
               <div className='deco-top-bg'></div>

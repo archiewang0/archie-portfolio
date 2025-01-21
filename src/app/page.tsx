@@ -59,7 +59,7 @@ export default function Home() {
 
             {/* 作品集 */}
             <div className={cn([' relative top-2 mt-10 transition-all' , show ? 'opacity-100 top-0' : 'opacity-0' ])  }>
-                <h3 className={cn(['text-center sm:text-left text-2xl sm:text-3xl dark:text-slate-300 mb-5 sm:mb-8 font-black', inter.className])} id='work'>Work.</h3>
+                <h3 className={cn(['text-center sm:text-left text-2xl sm:text-3xl dark:text-slate-300 mb-5 sm:mb-8 font-black', inter.className])} id='project'>Project.</h3>
                 <AccordionSection datas={datas.datas} />
             </div>
 
