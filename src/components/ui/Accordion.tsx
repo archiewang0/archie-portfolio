@@ -65,7 +65,11 @@ const AccordionSection:FC<AccordionSectionProps> = ({
                         </p>
                         
                         <div className="flex flex-wrap m-3">
-                            {skills.map((data, i )=> <Icon key={i} icon={data} width="50" height="50" className="sm:m-2 m-4" /> )}
+							
+                            {skills.map((data, i )=> <div  key={i} className="w-12 h-12 sm:m-2 m-4">
+									<Icon icon={data} width="50" height="50" className="w-full" /> 
+								</div>
+							)}
                         </div>
 
                         <div className=" sm:flex  sm:overflow-x-auto mt-3">
