@@ -2,10 +2,11 @@
 import * as Accordion from "@radix-ui/react-accordion";
 import { AccordionTrigger } from "@radix-ui/react-accordion";
 import { Icon } from "@iconify/react";
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { useTheme  } from 'next-themes'
 import Image from "next/image";
 import { StaticImageData } from "next/image";
+import { cn } from "@/lib/utils";
 
 interface I_AccordionItem {
 	id: string
@@ -30,6 +31,16 @@ export interface AccordionSectionProps{
 const AccordionSection:FC<AccordionSectionProps> = ({
 	datas
 }) => {	
+	const [loadedImages, setLoadedImages] = useState<{[key: string]: boolean}>({});
+
+    const handleImageLoad = (index: number) => {
+        setLoadedImages(prev => ({
+            ...prev,
+            [index]: true
+        }));
+    };
+
+
 	return (
 
 		<Accordion.Root className="w-full" defaultValue="id-1" type="single" collapsible>
@@ -65,7 +76,7 @@ const AccordionSection:FC<AccordionSectionProps> = ({
                         </p>
                         
                         <div className="flex flex-wrap m-3">
-							
+
                             {skills.map((data, i )=> <div  key={i} className="w-12 h-12 sm:m-2 m-4">
 									<Icon icon={data} width="50" height="50" className="w-full" /> 
 								</div>
@@ -73,13 +84,20 @@ const AccordionSection:FC<AccordionSectionProps> = ({
                         </div>
 
                         <div className=" sm:flex  sm:overflow-x-auto mt-3">
-
-                            {images.map(({src , href} , i)=> <a key={i} href={href} target="_blank" className=" bg-slate-800 flex justify-center items-center w-full accordionItem sm:mr-2 my-2 ">
-                                <Image className="w-full" src={src} alt="img" />
-                            </a> )}
+                            { images.map(( {src , href} , i)=>
+								<a 
+									key={i} 
+									href={href} 
+									target="_blank" 
+									className={cn(
+										'flex justify-center items-center w-full accordionItem sm:mr-2 my-2' ,
+										loadedImages[i] ?  ' bg-slate-700' :'image-placeholder'
+									)}>
+									<Image onLoad={()=>handleImageLoad(i)} className="w-full" src={src} alt="img" />
+								</a>
+							)}
                         </div>
                     </div>
-					
 				</Accordion.Content>
 			</Accordion.Item>
 		)}
