@@ -39,9 +39,12 @@ const ExperienceAccordion:FC<ExperienceAccordionAccordionProps> = ({datas}) => {
                             {describe}
                         </p>
                         
-                        {/* <div className="flex flex-wrap m-3">
-                            {skills.map((item , i)=> <Icon key={i} icon={item} width="50" height="50" className="sm:m-2 m-4 w-12 h-12" />)}
-                        </div> */}
+                        <div className="flex flex-wrap m-3">
+                            {skills.map((item , i)=> <div key={i} className="sm:m-2 m-4 w-12 h-12" >
+                                <Icon icon={item} width="50" height="50" className="w-full"/>
+                            </div>
+                            )}
+                        </div>
                     </div>
 				
 				</Accordion.Content>
