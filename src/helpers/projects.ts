@@ -20,6 +20,7 @@ import scratch2 from "public/img/scratch2.png";
 import drawing1 from "public/img/drawing1.png";
 import drawing2 from "public/img/drawing2.png";
 import drawing3 from "public/img/drawing3.png";
+import drawing4 from "public/img/drawing4.png";
 
 const projects = (theme: string | undefined): AccordionSectionProps => {
   theme = theme ? theme : "light";
@@ -176,6 +177,7 @@ const sideProjects = (theme: string | undefined): AccordionSectionProps => {
           { src: drawing1, href: drawing1.src },
           { src: drawing2, href: drawing2.src },
           { src: drawing3, href: drawing3.src },
+          { src: drawing4, href: drawing4.src },
         ],
       },
     ],
