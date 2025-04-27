@@ -21,6 +21,9 @@ import drawing1 from "public/img/drawing1.png";
 import drawing2 from "public/img/drawing2.png";
 import drawing3 from "public/img/drawing3.png";
 import drawing4 from "public/img/drawing4.png";
+import webScraper1 from "public/img/web-scraper1.png";
+import webScraper2 from "public/img/web-scraper2.png";
+import webScraper3 from "public/img/web-scraper3.png";
 
 const projects = (theme: string | undefined): AccordionSectionProps => {
   theme = theme ? theme : "light";
@@ -159,7 +162,7 @@ const sideProjects = (theme: string | undefined): AccordionSectionProps => {
   const datas: AccordionSectionProps = {
     datas: [
       {
-        id: "id-1",
+        id: "side-id-1",
         time: "2025 FEB - 2025 APR",
         projectName: "Drawing app",
         company: "",
@@ -178,6 +181,27 @@ const sideProjects = (theme: string | undefined): AccordionSectionProps => {
           { src: drawing2, href: drawing2.src },
           { src: drawing3, href: drawing3.src },
           { src: drawing4, href: drawing4.src },
+        ],
+      },
+      {
+        id: "side-id-2",
+        time: "2025 APR - 2025 APR",
+        projectName: "Web Scraper",
+        company: "",
+        webLink: "https://web-scraper-gules.vercel.app/",
+        describe:
+          "A web scraping tool that allows users to crawler data from website ",
+        skills: [
+          `skill-icons:nextjs-${theme}`,
+          `skill-icons:tailwindcss-${theme}`,
+          `skill-icons:vercel-${theme}`,
+          "skill-icons:mongodb",
+          "skill-icons:typescript",
+        ],
+        images: [
+          { src: webScraper1, href: webScraper1.src },
+          { src: webScraper2, href: webScraper2.src },
+          { src: webScraper3, href: webScraper3.src },
         ],
       },
     ],
