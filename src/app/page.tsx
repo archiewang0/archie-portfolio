@@ -108,11 +108,18 @@ export default function Home() {
               LinkedIn
             </a>
             <a
-              className="dark:text-slate-300"
+              className="dark:text-slate-300 mr-5"
               href="https://www.cake.me/me/archie-wang-4e8de0"
               target="_bank"
             >
               Cake
+            </a>
+            <a
+              className="dark:text-slate-300 mr-5"
+              href="https://github.com/archiewang0"
+              target="_bank"
+            >
+              Github
             </a>
           </p>
         </div>
